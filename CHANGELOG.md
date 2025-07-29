@@ -1,5 +1,14 @@
 # Angular File Switcher Changelog
 
+## 1.0.0
+
+- **Major refactoring**: Removed dynamic keyboard shortcut configuration system
+- **Simplified settings**: Settings UI now directs users to use IDE's standard Keymap configuration
+- **Static shortcuts**: Return to standard IntelliJ IDEA plugin keyboard shortcut definition
+- **Enhanced documentation**: Comprehensive README with usage instructions and shortcut customization guide
+- **Improved architecture**: Removed complex dynamic shortcut registration for better stability and maintainability
+- **User experience**: Now follows IntelliJ IDEA best practices for keyboard shortcut management
+
 ## 0.0.11
 
 - Update to the latest IntelliJ Platform version (251)

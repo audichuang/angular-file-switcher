@@ -37,22 +37,6 @@ class AppSettingsState : PersistentStateComponent<AppSettingsState?> {
     @JvmField
     var closeBehavior = DEFAULT_CLOSE_BEHAVIOR
     
-    // 自定義快捷鍵設定
-    @JvmField
-    var tsShortcut = DEFAULT_TS_SHORTCUT
-    
-    @JvmField
-    var htmlShortcut = DEFAULT_HTML_SHORTCUT
-    
-    @JvmField
-    var cssShortcut = DEFAULT_CSS_SHORTCUT
-    
-    @JvmField
-    var testShortcut = DEFAULT_TEST_SHORTCUT
-    
-    @JvmField
-    var nextFileShortcut = DEFAULT_NEXT_FILE_SHORTCUT
-    
     override fun getState(): AppSettingsState {
         return this
     }
@@ -69,13 +53,6 @@ class AppSettingsState : PersistentStateComponent<AppSettingsState?> {
             ".test.js .test.ts .spec.js .spec.ts _spec.js _spec.ts"
         private val DEFAULT_SWITCHER_GROUPING = Grouping.TAB_GROUP
         private val DEFAULT_CLOSE_BEHAVIOR = CloseBehavior.ONLY_ON_ACTION
-        
-        // 默認快捷鍵設定，公開給AppSettingsComponent使用
-        const val DEFAULT_TS_SHORTCUT = "alt T"
-        const val DEFAULT_HTML_SHORTCUT = "alt H"
-        const val DEFAULT_CSS_SHORTCUT = "alt C"
-        const val DEFAULT_TEST_SHORTCUT = "alt P"
-        const val DEFAULT_NEXT_FILE_SHORTCUT = "alt S"
 
         @JvmStatic
         val instance: AppSettingsState

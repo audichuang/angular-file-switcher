@@ -15,8 +15,6 @@
                 displayName="Angular File Switcher"/>
         <applicationService
                 serviceImplementation="com.jaredrobertson.plugins.angularFileSwitcher.settings.AppSettingsState"/>
-        <postStartupActivity
-                implementation="com.jaredrobertson.plugins.angularFileSwitcher.FileSwitcherStartupActivity"/>
     </extensions>
 
     <actions>
@@ -25,7 +23,7 @@
                 class="com.jaredrobertson.plugins.angularFileSwitcher.FileSwitchAction"
                 text="Open Next Similarly Named File"
                 description="Switch between corresponding Angular class, component, and style files">
-            <!-- 快捷鍵會在運行時動態設置 -->
+            <keyboard-shortcut first-keystroke="alt S" keymap="$default"/>
         </action>
         
         <action
@@ -33,7 +31,7 @@
                 class="com.jaredrobertson.plugins.angularFileSwitcher.TsFileSwitchAction"
                 text="Open TypeScript File"
                 description="Switch to the TypeScript file of the Angular component">
-            <!-- 快捷鍵會在運行時動態設置 -->
+            <keyboard-shortcut first-keystroke="alt T" keymap="$default"/>
         </action>
         
         <action
@@ -41,7 +39,7 @@
                 class="com.jaredrobertson.plugins.angularFileSwitcher.HtmlFileSwitchAction"
                 text="Open HTML Template File"
                 description="Switch to the HTML template file of the Angular component">
-            <!-- 快捷鍵會在運行時動態設置 -->
+            <keyboard-shortcut first-keystroke="alt H" keymap="$default"/>
         </action>
         
         <action
@@ -49,7 +47,7 @@
                 class="com.jaredrobertson.plugins.angularFileSwitcher.CssFileSwitchAction"
                 text="Open CSS/Style File"
                 description="Switch to the CSS/Style file of the Angular component">
-            <!-- 快捷鍵會在運行時動態設置 -->
+            <keyboard-shortcut first-keystroke="alt C" keymap="$default"/>
         </action>
         
         <action
@@ -57,7 +55,7 @@
                 class="com.jaredrobertson.plugins.angularFileSwitcher.TestFileSwitchAction"
                 text="Open Test File"
                 description="Switch to the Test file of the Angular component">
-            <!-- 快捷鍵會在運行時動態設置 -->
+            <keyboard-shortcut first-keystroke="alt P" keymap="$default"/>
         </action>
     </actions>
 

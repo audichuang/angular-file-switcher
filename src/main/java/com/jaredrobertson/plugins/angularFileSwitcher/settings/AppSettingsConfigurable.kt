@@ -2,7 +2,6 @@
 package com.jaredrobertson.plugins.angularFileSwitcher.settings
 
 import com.intellij.openapi.options.Configurable
-import com.jaredrobertson.plugins.angularFileSwitcher.ShortcutRegistration
 import com.jaredrobertson.plugins.angularFileSwitcher.settings.AppSettingsState.Companion.instance
 import org.jetbrains.annotations.Nls
 import javax.swing.JComponent
@@ -37,13 +36,6 @@ class AppSettingsConfigurable : Configurable {
         modified = modified or (mySettingsComponent!!.switcherGrouping !== settings.grouping)
         modified = modified or (mySettingsComponent!!.closeBehavior !== settings.closeBehavior)
         
-        // 檢查快捷鍵是否被修改
-        modified = modified or (mySettingsComponent!!.tsShortcut != settings.tsShortcut)
-        modified = modified or (mySettingsComponent!!.htmlShortcut != settings.htmlShortcut)
-        modified = modified or (mySettingsComponent!!.cssShortcut != settings.cssShortcut)
-        modified = modified or (mySettingsComponent!!.testShortcut != settings.testShortcut)
-        modified = modified or (mySettingsComponent!!.nextFileShortcut != settings.nextFileShortcut)
-        
         return modified
     }
 
@@ -55,16 +47,6 @@ class AppSettingsConfigurable : Configurable {
         settings.testFileExtensions = mySettingsComponent!!.testFileExtensionsText
         settings.grouping = mySettingsComponent!!.switcherGrouping
         settings.closeBehavior = mySettingsComponent!!.closeBehavior
-        
-        // 保存快捷鍵設定
-        settings.tsShortcut = mySettingsComponent!!.tsShortcut
-        settings.htmlShortcut = mySettingsComponent!!.htmlShortcut
-        settings.cssShortcut = mySettingsComponent!!.cssShortcut
-        settings.testShortcut = mySettingsComponent!!.testShortcut
-        settings.nextFileShortcut = mySettingsComponent!!.nextFileShortcut
-        
-        // 更新所有快捷鍵
-        ShortcutRegistration.updateAllShortcuts()
     }
 
     override fun reset() {
@@ -75,13 +57,6 @@ class AppSettingsConfigurable : Configurable {
         mySettingsComponent!!.testFileExtensionsText = settings.testFileExtensions
         mySettingsComponent!!.switcherGrouping = settings.grouping
         mySettingsComponent!!.closeBehavior = settings.closeBehavior
-        
-        // 重置快捷鍵設定
-        mySettingsComponent!!.tsShortcut = settings.tsShortcut
-        mySettingsComponent!!.htmlShortcut = settings.htmlShortcut
-        mySettingsComponent!!.cssShortcut = settings.cssShortcut
-        mySettingsComponent!!.testShortcut = settings.testShortcut
-        mySettingsComponent!!.nextFileShortcut = settings.nextFileShortcut
     }
 
     override fun disposeUIResources() {
